@@ -30,18 +30,21 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         final View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        listView = (ListView) root.findViewById(R.id.surah_list_view_id);
+        listView = (ListView) root.findViewById(R.id.surahListViewId);
         final String[] surahNames = getResources().getStringArray(R.array.surah_names);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(root.getContext(),
-                R.layout.surah_text_view, R.id.surah_text_view_id, surahNames);
+                R.layout.surah_text_view, R.id.surahTextViewId, surahNames);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
                 Intent intent = new Intent(root.getContext(), SurahActivity.class);
+                intent.putExtra("surah_index", String.valueOf(position));
                 startActivity(intent);
+
             }
         });
 

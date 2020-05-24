@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/surah_text_view_id"
+        android:id="@+id/surahTextViewId"
         android:textSize="20sp"
         android:textStyle="bold"
         android:text="Hello There"
