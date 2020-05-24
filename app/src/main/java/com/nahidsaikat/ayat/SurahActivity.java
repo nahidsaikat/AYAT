@@ -3,8 +3,10 @@ package com.nahidsaikat.ayat;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.ListView;
 
 public class SurahActivity extends AppCompatActivity {
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +17,10 @@ public class SurahActivity extends AppCompatActivity {
         if (bundle != null) {
             String index = bundle.getString("surah_index");
 
+            listView = findViewById(R.id.ayatListViewId);
+
+            CustomAdapter adapter = new CustomAdapter(this, index);
+            listView.setAdapter(adapter);
         }
     }
 }
