@@ -1,5 +1,6 @@
 package com.nahidsaikat.ayat.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.nahidsaikat.ayat.MainActivity;
 import com.nahidsaikat.ayat.R;
+import com.nahidsaikat.ayat.SurahActivity;
 
 public class HomeFragment extends Fragment {
 
@@ -38,8 +40,8 @@ public class HomeFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String value = surahNames[position];
-                Toast.makeText(root.getContext(), value, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(root.getContext(), SurahActivity.class);
+                startActivity(intent);
             }
         });
 
